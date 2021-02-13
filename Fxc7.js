@@ -67,7 +67,7 @@ const vcard = 'BEGIN:VCARD\n'
             + 'TEL;type=CELL;type=VOICE;waid=553398091185:+55 33-9809-1185\n'
             + 'END:VCARD'
 
-prefix = "!"
+prefix = "-"
 name = "~ TIAGO BOT"
 rdaftar = "OBRIGADO POR SE REGISTAR PARA SER UM BRABO TIAGOBOT😁"
 rmenu = "Olá amigo TIAGOBOT👋 NÃO ESQUEÇA :)"
@@ -119,7 +119,7 @@ async function starts() {
 				} catch {
 					ppimg = 'https://i0.wp.com/www.gambarunik.id/wp-content/uploads/2019/06/Top-Gambar-Foto-Profil-Kosong-Lucu-Tergokil-.jpg'
 				}
-				teks = `Halo @${num.split('@')[0]}\nSelamat datang di group *${mdata.subject}*`
+				teks = `Olá @${num.split('@')[0]}\nSelamat datang di group *${mdata.subject}*`
 				let buff = await getBuffer(ppimg)
 				frhan.sendMessage(mdata.id, buff, MessageType.image, {caption: teks, contextInfo: {"mentionedJid": [num]}})
 			} else if (anu.action == 'remove') {
@@ -364,7 +364,7 @@ async function starts() {
 					brainly(`${brien}`).then(res => {
 					teks = '❉───────────────────────❉\n'
 					for (let Y of res.data) {
-						teks += `\n*「 _BRAINLY_ 」*\n\n*➸ Pertanyaan:* ${Y.pertanyaan}\n\n*➸ Jawaban:* ${Y.jawaban[0].text}\n❉───────────────────────❉\n`
+						teks += `\n*「 _BRAINLY_ 」*\n\n*➸ Pergunta:* ${Y.pertanyaan}\n\n*➸ Resposta:* ${Y.jawaban[0].text}\n❉───────────────────────❉\n`
 					}
 					frhan.sendMessage(from, teks, text, {quoted: mek, detectLinks: false})
                         console.log(res)
@@ -531,7 +531,7 @@ async function starts() {
 				case 'readmore':
 					if (isBanned) return reply(mess.only.benned)    
 					if (!isUser) return reply(mess.only.userB)
-					if (args.length < 1) return reply('teks nya mana om?')
+					if (args.length < 1) return reply('cadê o texto, tio?')
 					var kls = body.slice(9)
 					var has = kls.split("/")[0];
 					var kas = kls.split("/")[1];
@@ -893,7 +893,7 @@ async function starts() {
 				  case 'ownergroup':
                frhan.updatePresence(from, Presence.composing) 
               options = {
-          text: `Owner Group ini adalah : wa.me/${from.split("-")[0]}`,
+          text: `Baitola Que Criou Grupo : wa.me/${from.split("-")[0]}`,
           contextInfo: { mentionedJid: [from] }
            }
            frhan.sendMessage(from, options, text, { quoted: mek } )
@@ -1146,7 +1146,7 @@ async function starts() {
 				if (!isUser) return reply(mess.only.userB)
 				if (!isPublic) return reply(mess.only.publikG)
 				if (isLimit(sender)) return reply(limitend(pushname2))
-					if (args.length < 1) return reply('Urlnya mana gan?')
+					if (args.length < 1) return reply('Cadê o url, mano?')
 					teks = `${body.slice(7)}`
 					reply(mess.wait)
 					anu = await fetchJson(`https://mhankbarbar.tech/api/url2image?tipe=tablet&url=${teks}&apiKey=${BarBarApi}`)
@@ -1289,7 +1289,7 @@ async function starts() {
                 if (!isUser) return reply(mess.only.userB)
                 if (!isPublic) return reply(mess.only.publikG)
                 if (isLimit(sender)) return reply(limitend(pushname2))
-                if (!isAnime) return reply(' *Harus Mengaktifkan Mode Anime* ')
+                if (!isAnime) return reply(' *Deve ativar o modo Anime* ')
 					anu = await fetchJson(`https://tobz-api.herokuapp.com/api/randomanime?apikey=${TobzApi}`, {method: 'get'})
 					reply(mess.wait)
 					pok = await getBuffer(anu.result)
@@ -1301,7 +1301,7 @@ async function starts() {
                 if (!isUser) return reply(mess.only.userB)
                 if (!isPublic) return reply(mess.only.publikG)
                 if (isLimit(sender)) return reply(limitend(pushname2))
-                if (!isAnime) return reply(' *Harus Mengaktifkan Mode Anime* ')
+                if (!isAnime) return reply(' *Deve ativar o modo Anime* ')
 					ranp = getRandom('.gif')
 					rano = getRandom('.webp')
 					anu = await fetchJson(`https://tobz-api.herokuapp.com/api/kiss?apikey=${TobzApi}`, {method: 'get'})
@@ -1318,7 +1318,7 @@ async function starts() {
 				if (!isUser) return reply(mess.only.userB)
 				if (!isPublic) return reply(mess.only.publikG)
 				if (isLimit(sender)) return reply(limitend(pushname2))
-					if (!isAnime) return reply(' *Harus Mengaktifkan Mode Anime* ')
+					if (!isAnime) return reply(' *Deve ativar o modo Anime* ')
 					reply(mess.wait)
 					anu = await fetchJson(`https://api.fdci.se/rep.php?gambar=Naruto`, {method: 'get'})
 					naru = JSON.parse(JSON.stringify(anu));
@@ -1332,7 +1332,7 @@ async function starts() {
 				if (!isUser) return reply(mess.only.userB)
 				if (!isPublic) return reply(mess.only.publikG)
 				if (isLimit(sender)) return reply(limitend(pushname2))
-					if (!isAnime) return reply(' *Harus Mengaktifkan Mode Anime* ')
+					if (!isAnime) return reply(' *Deve ativar o modo Anime* ')
 					reply(mess.wait)
 					anu = await fetchJson(`https://api.fdci.se/rep.php?gambar=Minato`, {method: 'get'})
 					min = JSON.parse(JSON.stringify(anu));
@@ -1346,7 +1346,7 @@ async function starts() {
 				if (!isUser) return reply(mess.only.userB)
 				if (!isPublic) return reply(mess.only.publikG)
 				if (isLimit(sender)) return reply(limitend(pushname2))
-					if (!isAnime) return reply(' *Harus Mengaktifkan Mode Anime* ')
+					if (!isAnime) return reply(' *Deve ativar o modo Anime* ')
 					reply(mess.wait)
 					anu = await fetchJson(`https://api.fdci.se/rep.php?gambar=Boruto`, {method: 'get'})
 					bor = JSON.parse(JSON.stringify(anu));
@@ -1360,7 +1360,7 @@ async function starts() {
 				if (!isUser) return reply(mess.only.userB)
 				if (!isPublic) return reply(mess.only.publikG)
 				if (isLimit(sender)) return reply(limitend(pushname2))
-					if (!isAnime) return reply(' *Harus Mengaktifkan Mode Anime* ')
+					if (!isAnime) return reply(' *Deve ativar o modo Anime* ')
 					reply(mess.wait)
 					anu = await fetchJson(`https://api.fdci.se/rep.php?gambar=Hinata`, {method: 'get'})
 					hina = JSON.parse(JSON.stringify(anu));
@@ -1374,7 +1374,7 @@ async function starts() {
 				if (!isUser) return reply(mess.only.userB)
 				if (!isPublic) return reply(mess.only.publikG)
 				if (isLimit(sender)) return reply(limitend(pushname2))
-					if (!isAnime) return reply(' *Harus Mengaktifkan Mode Anime* ')
+					if (!isAnime) return reply(' *Deve ativar o modo Anime* ')
 					reply(mess.wait)
 					anu = await fetchJson(`https://api.fdci.se/rep.php?gambar=sasuke`, {method: 'get'})
 					sasu = JSON.parse(JSON.stringify(anu));
@@ -1388,7 +1388,7 @@ async function starts() {
 				if (!isUser) return reply(mess.only.userB)
 				if (!isPublic) return reply(mess.only.publikG)
 				if (isLimit(sender)) return reply(limitend(pushname2))
-					if (!isAnime) return reply(' *Harus Mengaktifkan Mode Anime* ')
+					if (!isAnime) return reply(' *Deve ativar o modo Anime* ')
 					reply(mess.wait)
 					anu = await fetchJson(`https://api.fdci.se/rep.php?gambar=sakura`, {method: 'get'})
 					sak = JSON.parse(JSON.stringify(anu));
@@ -1403,7 +1403,7 @@ async function starts() {
 				if (!isUser) return reply(mess.only.userB)
 				if (!isPublic) return reply(mess.only.publikG)
 				if (isLimit(sender)) return reply(limitend(pushname2))
-					if (!isAnime) return reply(' *Harus Mengaktifkan Mode Anime* ')
+					if (!isAnime) return reply(' *Deve ativar o modo Anime* ')
 					reply(mess.wait)
 					anu = await fetchJson(`https://api.vhtear.com/pinterest?query=kaneki&apikey=${VthearApi}`, {method: 'get'})
 					var ka = JSON.parse(JSON.stringify(anu.result));
@@ -1417,7 +1417,7 @@ async function starts() {
 				if (!isUser) return reply(mess.only.userB)
 				if (!isPublic) return reply(mess.only.publikG)
 				if (isLimit(sender)) return reply(limitend(pushname2))
-					if (!isAnime) return reply(' *Harus Mengaktifkan Mode Anime* ')
+					if (!isAnime) return reply(' *Deve ativar o modo Anime* ')
 					reply(mess.wait)
 					anu = await fetchJson(`https://api.fdci.se/rep.php?gambar=anime+touka`, {method: 'get'})
 					tou = JSON.parse(JSON.stringify(anu));
@@ -1431,7 +1431,7 @@ async function starts() {
 				if (!isUser) return reply(mess.only.userB)
 				if (!isPublic) return reply(mess.only.publikG)
 				if (isLimit(sender)) return reply(limitend(pushname2))
-					if (!isAnime) return reply(' *Harus Mengaktifkan Mode Anime* ')
+					if (!isAnime) return reply(' *Deve ativar o modo Anime* ')
 					reply(mess.wait)
 					anu = await fetchJson(`https://api.fdci.se/rep.php?gambar=anime+rize`, {method: 'get'})
 					ri = JSON.parse(JSON.stringify(anu));
@@ -1445,7 +1445,7 @@ async function starts() {
 				if (!isUser) return reply(mess.only.userB)
 				if (!isPublic) return reply(mess.only.publikG)
 				if (isLimit(sender)) return reply(limitend(pushname2))
-					if (!isAnime) return reply(' *Harus Mengaktifkan Mode Anime* ')
+					if (!isAnime) return reply(' *Deve ativar o modo Anime* ')
 					reply(mess.wait)
 					anu = await fetchJson(`https://api.fdci.se/rep.php?gambar=anime+akira`, {method: 'get'})
 					ak = JSON.parse(JSON.stringify(anu));
@@ -1459,7 +1459,7 @@ async function starts() {
 				if (!isUser) return reply(mess.only.userB)
 				if (!isPublic) return reply(mess.only.publikG)
 				if (isLimit(sender)) return reply(limitend(pushname2))
-					if (!isAnime) return reply(' *Harus Mengaktifkan Mode Anime* ')
+					if (!isAnime) return reply(' *Deve ativar o modo Anime* ')
 					reply(mess.wait)
 					anu = await fetchJson(`https://api.fdci.se/rep.php?gambar=anime+itori`, {method: 'get'})
 					it = JSON.parse(JSON.stringify(anu));
@@ -1473,7 +1473,7 @@ async function starts() {
 				if (!isUser) return reply(mess.only.userB)
 				if (!isPublic) return reply(mess.only.publikG)
 				if (isLimit(sender)) return reply(limitend(pushname2))
-					if (!isAnime) return reply(' *Harus Mengaktifkan Mode Anime* ')
+					if (!isAnime) return reply(' *Deve ativar o modo Anime* ')
 					reply(mess.wait)
 					anu = await fetchJson(`https://api.fdci.se/rep.php?gambar=anime+karumi`, {method: 'get'})
 					kur = JSON.parse(JSON.stringify(anu));
@@ -1487,7 +1487,7 @@ async function starts() {
 				if (!isPublic) return reply(mess.only.publikG)
 				if (!isUser) return reply(mess.only.userB)
 				if (isLimit(sender)) return reply(limitend(pushname2))
-					if (!isAnime) return reply(' *Harus Mengaktifkan Mode Anime* ')
+					if (!isAnime) return reply(' *Deve ativar o modo Anime* ')
 					reply(mess.wait)
 					anu = await fetchJson(`https://api.fdci.se/rep.php?gambar=anime+miku`, {method: 'get'})
 					mi = JSON.parse(JSON.stringify(anu));
@@ -1623,7 +1623,7 @@ async function starts() {
 				if (!isPublic) return reply(mess.only.publikG)
 				if (isLimit(sender)) return reply(limitend(pushname2))
 				reply(mess.wait)
-					if (args.length < 1) return reply('Urlnya mana gan?')
+					if (args.length < 1) return reply('Cadê o url, mano?')
 					if (!isUrl(args[0]) && !args[0].includes('www.facebook.com')) return reply(mess.error.Iv)
 					reply(mess.wait)
 					anu = await fetchJson(`https://mhankbarbar.tech/api/epbe?url=${args[0]}&apiKey=${BarBarApi}`, {method: 'get'})
@@ -1723,7 +1723,7 @@ async function starts() {
 				anu = await fetchJson(`http://www.omdbapi.com/?s=${body.slice(6)}&plot=full&apikey=56b1b6f0&r=json`, {method: 'get'})
 				hasil = '=========================\n'
 				for(let film of anu.Search) {
-				hasil += `• *Titulo:* ${film.Title}\n• *Solte o tofu:* ${film.Year}\n• *Tipo:* ${film.Type}\n• *Link:* https://m.imdb.com/title/${film.imdbID}\n=========================\n`
+				hasil += `• *Titulo:* ${film.Title}\n• *Data De Laçamento:* ${film.Year}\n• *Tipo:* ${film.Type}\n• *Link:* https://m.imdb.com/title/${film.imdbID}\n=========================\n`
 				}
 				reply(hasil.trim())
 				await limitAdd(sender) 
@@ -1791,7 +1791,7 @@ async function starts() {
 				if (!isUser) return reply(mess.only.userB)
 				if (!isPublic) return reply(mess.only.publikG)
 				if (isLimit(sender)) return reply(limitend(pushname2))
-					if (args.length < 1) return reply('*Textnya mana gan?*')
+					if (args.length < 1) return reply('*Onde está o texto?*')
 					teks = `${body.slice(7)}`
 					atytyd = await getBuffer(`https://api.vhtear.com/slidingtext?text=${teks}&apikey=${VthearApi}`, {method: 'get'})
 					reply(mess.wait)
@@ -1977,7 +1977,7 @@ async function starts() {
    					if (!isUser) return reply(mess.only.userB)
    					if (!isPublic) return reply(mess.only.publikG)
    					if (isLimit(sender)) return reply(limitend(pushname2))
-                        anu = await fetchJson(`https://api.vhtear.com/igprofile?query=${body.slice(9)}&apikey=${VthearApi}`, {method: 'get'})
+                        anu = await fetchJson(`https://videfikri.com/api/igstalk/?username=`, {method: 'get'})
                      buffer = await getBuffer(anu.result.picture)
                      reply(mess.wait)
                      hasil = `╭─「 *INSTAGRAM STALKER* 」\n│\n│• Link: https://www.instagram.com/${anu.result.username}\n│• Nome completo : ${anu.result.full_name}\n│• Seguidores : ${anu.result.follower}\n│• Seguindo : ${anu.result.follow}\n│• Número de posts: ${anu.result.post_count}\n│• Bio : ${anu.result.biography}\n╰─────────────────────`
@@ -2134,7 +2134,7 @@ async function starts() {
 					tipelist = ['desktop','tablet','mobile']
 					if (args.length < 1) return reply('Tipenya apa gan?')
 					if (!tipelist.includes(args[0])) return reply('Tipe desktop|tablet|mobile')
-					if (args.length < 2) return reply('Urlnya mana gan?')
+					if (args.length < 2) return reply('Cadê o url, mano?')
 					if (!isUrl(args[1])) return reply(mess.error.Iv)
 					reply(mess.wait)
 					anu = await fetchJson(`https://mhankbarbar.tech/api/url2image?tipe=${args[0]}&url=${args[1]}&apiKey=${BarBarApi}`, {method: 'get'})
@@ -2432,11 +2432,11 @@ async function starts() {
 						if (isSimi) return reply('O modo Simi está ativo')
 						samih.push(from)
 						fs.writeFileSync('./database/json/simi.json', JSON.stringify(samih))
-						reply(`\`\`\`Sukses mengaktifkan mode simi di group\`\`\` *${groupMetadata.subject}*`)
+						reply(`\`\`\`Ativado o modo simi com sucesso no grupo\`\`\` *${groupMetadata.subject}*`)
 					} else if ((args[0]) === 'off') {
 						samih.splice(from, 1)
 						fs.writeFileSync('./database/json/simi.json', JSON.stringify(samih))
-						reply(`\`\`\`✓Sukes menonaktifkan mode simi di group\`\`\` *${groupMetadata.subject}*`)
+						reply(`\`\`\`✓Desativado o modo simi com sucesso no grupo\`\`\` *${groupMetadata.subject}*`)
 					} else {
 						reply('On ativar, Off desabilitar')
 					}
@@ -2472,11 +2472,11 @@ async function starts() {
 						if (isAnime) return reply('O modo anime já está ativo')
 						anime.push(from)
 						fs.writeFileSync('./database/json/anime.json', JSON.stringify(anime))
-						reply(`\`\`\`✓Sukses mengaktifkan mode anime di group\`\`\` *${groupMetadata.subject}*`)
+						reply(`\`\`\`✓Ativado com sucesso o modo anime no grupo\`\`\` *${groupMetadata.subject}*`)
 					} else if ((args[0]) === 'off') {
 						anime.splice(from, 1)
 						fs.writeFileSync('./database/json/anime.json', JSON.stringify(anime))
-						reply(`\`\`\`✓Sukes menonaktifkan mode anime di group\`\`\` *${groupMetadata.subject}*`)
+						reply(`\`\`\`✓Desativado com sucesso o modo anime no grupo\`\`\` *${groupMetadata.subject}*`)
 					} else {
 						reply('On para ativar, Off para Desativar')
 					}
@@ -2492,11 +2492,11 @@ async function starts() {
 						if (isWelkom) return reply('Ja ativo mano')
 						welkom.push(from)
 						fs.writeFileSync('./database/json/welkom.json', JSON.stringify(welkom))
-						reply(`\`\`\`✓Sukses mengaktifkan fitur welcome di group\`\`\` *${groupMetadata.subject}*`)
+						reply(`\`\`\`✓Ativado com sucesso o recurso de boas-vindas no grupo\`\`\` *${groupMetadata.subject}*`)
 					} else if ((args[0]) === 'off') {
 						welkom.splice(from, 1)
 						fs.writeFileSync('./database/json/welkom.json', JSON.stringify(welkom))
-						reply(`\`\`\`✓Sukses menonaktifkan fitur welcome di group\`\`\` *${groupMetadata.subject}*`)
+						reply(`\`\`\`✓Desativado com sucesso o recurso de boas-vindas no grupo\`\`\` *${groupMetadata.subject}*`)
 					} else {
 						reply('On para ativar, Off para Desativar')
 					}
@@ -2510,12 +2510,12 @@ async function starts() {
 						if (isAntiLink) return reply('antilink já está ligado')
 						antilink.push(from)
 						fs.writeFileSync('./database/json/antilink.json', JSON.stringify(antilink))
-						reply(`\`\`\`✓Sukses mengaktifkan fitur anti link di group\`\`\` *${groupMetadata.subject}*`)
+						reply(`\`\`\`✓Ativou com sucesso o recurso anti-link no grupo\`\`\` *${groupMetadata.subject}*`)
 					} else if ((args[0]) === 'off') {
 						if (!isAntiLink) return reply('antilink está desligado')
 						antilink.splice(from, 1)
 						fs.writeFileSync('./database/json/antilink.json', JSON.stringify(antilink))
-						reply(`\`\`\`✓Sukses menonaktifkan fitur anti link di group\`\`\` *${groupMetadata.subject}*`)
+						reply(`\`\`\`✓Desativando com sucesso o recurso anti-link no grupo\`\`\` *${groupMetadata.subject}*`)
 					} else {
 						reply('on para ativar, off para Desativar')
 					}
@@ -2781,7 +2781,7 @@ async function starts() {
 			if (isBanned) return reply(mess.only.benned)    
 				if (!isUser) return reply(mess.only.userB)
 				if (!isPrem) return reply(mess.only.premium)
-				if (args.length < 1) return reply('Urlnya mana gan?')
+				if (args.length < 1) return reply('Cadê o url, mano?')
 					if (!isUrl(args[0]) && !args[0].includes('sck')) return reply(mess.error.Iv)
                 anu = await fetchJson(`https://api-anoncybfakeplayer.herokuapp.com/sckdown?url=${args[0]}`, {method: 'get'})
                if (anu.error) return reply(anu.error)
@@ -2800,17 +2800,15 @@ async function starts() {
     				if (!isUser) return reply(mess.only.userB)
 					if (args.length < 1) return reply('Cade Link?')
 					if (!isUrl(args[0]) && !args[0].includes('youtu.be')) return reply(mess.error.Iv)
-					anu = await fetchJson(`https://videfikri.com/api/ytmp4/?url=${args[0]}&apikey=${Videfikri}`, {method: 'get'})
+					anu = await fetchJson(`https://st4rz.herokuapp.com/api/ytv2?url=${args[0]}`, {method: 'get'})
 					if (anu.error) return reply(anu.error)
-					ytt = `╭─「 *YOUTUBE MP4 DOWNLOADER* 」\n│\n│• *Titulo:* ${anu.result.title}\n│• *Tamanho:* ${anu.result.size}\n│• *Link:* https://www.youtu.be/${anu.result.id}\n│\n│ Espere um minuto 1 minuto talvez um pouco mais \n│ baixando vídeos\n╰─────────────────────`
-					buff = await getBuffer(anu.result.imgUrl)
-					reply(mess.wait)
-					buffer = await getBuffer(anu.result.UrlVideo)
-					frhan.sendMessage(from, buff, image, {quoted: mek, caption: ytt})
-					frhan.sendMessage(from, buffer, video, {mimetype: 'video/mp4', filename: `${anu.result.title}.mp4`, quoted: mek, caption: 'Nih Gan'})
-					await limitAdd(sender) 
+					teks = `*❏ Titulo* : ${anu.title}\n\n*VÍDEO ESTÁ ENVIANDO, NÃO FLODE PAI*`
+					thumb = await getBuffer(anu.thumb)
+					client.sendMessage(from, thumb, image, {quoted: mek, caption: teks})
+					buffer = await getBuffer(anu.result)
+					client.sendMessage(from, buffer, video, {mimetype: 'video/mp4', filename: `${anu.title}.mp4`, quoted: mek})
+					await limitAdd(sender) // Follow @_sadboy.ig 
 					break 
-
 				case 'ytmp3':
 					if (isBanned) return reply(mess.only.benned)    
 					if (!isPrem) return reply(mess.only.premium)
@@ -2883,7 +2881,7 @@ case 'asupan':
 				if (!isUser) return reply(mess.only.userB)
 				if (!isPublic) return reply(mess.only.publikG)
 				if (isLimit(sender)) return reply(limitend(pushname2))
-                    if (args.length < 1) return reply('teks nya mana om?')
+                    if (args.length < 1) return reply('cadê o texto, tio?')
                     reply(mess.wait)
                    wiki = `${body.slice(6)}`
                     anu = await fetchJson(`https://tobz-api.herokuapp.com/api/wiki?q=${wiki}&apikey=${TobzApi}`, {method: 'get'})
