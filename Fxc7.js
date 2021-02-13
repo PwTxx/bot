@@ -73,7 +73,7 @@ rdaftar = "OBRIGADO POR SE REGISTAR PARA SER UM BRABO TIAGOBOT😁"
 rmenu = "Olá amigo TIAGOBOT👋 NÃO ESQUEÇA :)"
 botinfo = "PARA BOTS CONVIDADOS, DOE DU:)"
 limitt = 1000
-memberLimit = 2
+memberLimit = 1
 ban = []
 premium = ["553398091185@s.whatsapp.net","553387192047@s.whatsapp.net","559293593189@s.whatsapp.net","555196399602@s.whatsapp.net"]
 
@@ -85,7 +85,7 @@ function kyun(seconds){
   var minutes = Math.floor(seconds % (60*60) / 60);
   var seconds = Math.floor(seconds % 60);
 
-  return `${pad(hours)} Jam ${pad(minutes)} Menit ${pad(seconds)} Detik`
+  return `${pad(hours)} Horas ${pad(minutes)} Minuto ${pad(seconds)} Segundo`
 }
 
 
@@ -166,8 +166,8 @@ async function starts() {
 			const { text, extendedText, contact, location, liveLocation, image, video, sticker, document, audio, product } = MessageType
 
 			const date = new Date().toLocaleDateString()
-			const time = moment.tz('Asia/Jakarta').format('HH:mm:ss')
-			const jam = moment.tz('Asia/Jakarta').format('HH:mm')
+			const time = moment.tz('America/Sao_Paulo').format('DD/MM/YYYY')
+			const jam = moment.tz('America/Sao_Paulo').format('HH:mm')
 
 			body = (type === 'conversation' && mek.message.conversation.startsWith(prefix)) ? mek.message.conversation : (type == 'imageMessage') && mek.message.imageMessage.caption.startsWith(prefix) ? mek.message.imageMessage.caption : (type == 'videoMessage') && mek.message.videoMessage.caption.startsWith(prefix) ? mek.message.videoMessage.caption : (type == 'extendedTextMessage') && mek.message.extendedTextMessage.text.startsWith(prefix) ? mek.message.extendedTextMessage.text : ''
 			budy = (type === 'conversation') ? mek.message.conversation : (type === 'extendedTextMessage') ? mek.message.extendedTextMessage.text : '' 
@@ -373,7 +373,7 @@ async function starts() {
 				break 
 		case 'daftar':
 					frhan.updatePresence(from, Presence.composing)
-					if (isUser) return reply('kamu sudah Menjadi Temen IRIENEBOT:D')
+					if (isUser) return reply('vocês já são amigos TIAGBOT:D')
 					if (isBanned) return reply(mess.only.benned)
 					user.push(sender)
 					fs.writeFileSync('./database/json/user.json', JSON.stringify(user))
@@ -382,7 +382,7 @@ async function starts() {
 					} catch {
 					ppimg = 'https://i0.wp.com/www.gambarunik.id/wp-content/uploads/2019/06/Top-Gambar-Foto-Profil-Kosong-Lucu-Tergokil-.jpg'
 					}
-					captionnya = `╭─「 *PENDAFTARAN USER* 」\`\`\`\n│ Pendaftaran berhasil dengan SN: \n│ TM08GK8PPHBSJDH10J\`\`\`\n│\n│\`\`\`Pada ${date} ${time}\`\`\`\n│\`\`\`[Nama]: ${pushname2}\`\`\`\n│\`\`\`[Nomor]: wa.me/${sender.split("@")[0]}\`\`\`\n│\`\`\`Untuk menggunakan bot\`\`\`\n│\`\`\`silahkan\`\`\`\n│\`\`\`kirim ${prefix}help/menu\`\`\`\n│\`\`\`\n│Total Pengguna: ${user.length} Orang\`\`\`\n╰─────────────────────────`
+					captionnya = `╭─「 *REGISTRO DE USUÁRIO* 」\`\`\`\n│ O registro foi bem sucedido com SN: \n│ TM08GK8PPHBSJDH10J\`\`\`\n│\n│\`\`\`Sobre ${date} ${time}\`\`\`\n│\`\`\`[Nome]: ${pushname2}\`\`\`\n│\`\`\`[Número]: wa.me/${sender.split("@")[0]}\`\`\`\n│\`\`\`Para usar um bot\`\`\`\n│\`\`\`Por favor\`\`\`\n│\`\`\`Digite ${prefix}help/menu\`\`\`\n│\`\`\`\n│Total de usuários: ${user.length} Pessoa\`\`\`\n╰─────────────────────────`
 					daftarimg = await getBuffer(ppimg)
 					frhan.sendMessage(from, daftarimg, image, {quoted: mek, caption: captionnya})
 					break 
@@ -393,8 +393,8 @@ async function starts() {
 				if (!isUser) return reply(mess.only.userB)
 				uptime = process.uptime()
 				user.push(sender)
-				myMonths = ["Januari","Februari","Maret","April","Mei","Juni","Juli","Agustus","September","Oktober","November","Desember"];
-                myDays = ['Minggu','Senin','Selasa','Rabu','Kamis','Jum at','Sabtu'];
+				myMonths = ["Janeiro","Fevereiro","Março","Abril","Maio","Junho","Julho","Agosto","Setembro","Outubro","Novembro","Dezembro"];
+                myDays = ['Domingo','Segunda','Terça','Quarta','Quinta','Sexta','Sabado'];
                 var tgl = new Date();
                 var day = tgl.getDate()
                   bulan = tgl.getMonth()
@@ -724,7 +724,7 @@ async function starts() {
 				    break 
 				case 'owner':
                  frhan.sendMessage(from, {displayname: "jeff", vcard: vcard}, MessageType.contact, { quoted: mek})
-                 frhan.sendMessage(from, 'Jika Mau Save Chat Aja Gan Ntar Disave Back:)',text, { quoted: mek} )
+                 frhan.sendMessage(from, 'Gostoso Do Meu Dono:)',text, { quoted: mek} )
                  break
                 case 'fitnah':
                  if (isBanned) return reply(mess.only.benned)    
@@ -811,7 +811,7 @@ async function starts() {
                     reply(mess.wait)
 					teks = '#############################\n'
 					for (let i of data.result) {
-						teks += `*Title* : ${i.title}\n*link* : ${i.link}\n\n : ${i.desk}\n###########################\n`
+						teks += `*Titulo* : ${i.title}\n*link* : ${i.link}\n\n : ${i.desk}\n###########################\n`
 					}
 					reply(teks.trim())
 					await limitAdd(sender) 
@@ -921,21 +921,21 @@ async function starts() {
 			    if (!isGroupAdmins) return reply(mess.only.admin)
 				if (!isBotGroupAdmins) return reply(mess.only.Badmin)
                 frhan.groupUpdateDescription(from, `${body.slice(9)}`)
-                frhan.sendMessage(from, `\`\`\`✓Sukses Mengganti Deskripsi Group\`\`\` *${groupMetadata.subject}* Menjadi: *${body.slice(9)}*`, text, {quoted: mek})
+                frhan.sendMessage(from, `\`\`\`✓Alteração da descrição do grupo com sucesso\`\`\` *${groupMetadata.subject}* Menjadi: *${body.slice(9)}*`, text, {quoted: mek})
                 break
 				case 'tts':
 				if (isBanned) return reply(mess.only.benned)    
 				if (!isUser) return reply(mess.only.userB)
 				if (!isPublic) return reply(mess.only.publikG)
 				if (isLimit(sender)) return reply(limitend(pushname2))
-					if (args.length < 1) return frhan.sendMessage(from, 'Kode bahasanya mana gan?\n Kalo Gatau Kode Bahasanya Apa Aja Ketik Saja *${prefix}bahasa*', text, {quoted: mek})
+					if (args.length < 1) return frhan.sendMessage(from, 'Qual código de idioma, mano?\n Se você não sabe o código do idioma, basta digitar *${prefix}bahasa*', text, {quoted: mek})
 					const gtts = require('./lib/gtts')(args[0])
-					if (args.length < 2) return frhan.sendMessage(from, 'Textnya mana gan?', text, {quoted: mek})
+					if (args.length < 2) return frhan.sendMessage(from, 'Cadê o texto, mano?', text, {quoted: mek})
 					dtt = body.slice(9)
 					ranm = getRandom('.mp3')
 					rano = getRandom('.ogg')
 					dtt.length > 600
-					? reply('Textnya kebanyakan gan')
+					? reply('O texto é demais mano')
 					: gtts.save(ranm, dtt, function() {
 						exec(`ffmpeg -i ${ranm} -ar 48000 -vn -c:a libopus ${rano}`, (err) => {
 							fs.unlinkSync(ranm)
@@ -1009,7 +1009,7 @@ async function starts() {
 					rate = body.slice(1)
 					ratee = ["100%","95%","90%","85%","80%","75%","70%","65%","60%","55%","50%","45%","40%","35%","30%","25%","20%","15%","10%","5%"]
 					const te = ratee[Math.floor(Math.random() * ratee.length)]
-					frhan.sendMessage(from, 'Pertanyaan : *'+rate+'*\n\nJawaban : '+ te+'', text, { quoted: mek })
+					frhan.sendMessage(from, 'Questão : *'+rate+'*\n\nResposta : '+ te+'', text, { quoted: mek })
 					break 
 				case 'watak':
 				if (isBanned) return reply(mess.only.benned)    
@@ -1105,21 +1105,21 @@ async function starts() {
                      const pesan = body.slice(8)
                       if (pesan.length > 300) return frhan.sendMessage(from, 'Maaf Teks Terlalu Panjang, Maksimal 300 Teks', text, {quoted: mek})
                         var nomor = mek.participant
-                       const teks1 = `*[REPORT]*\nNomor : @${nomor.split("@s.whatsapp.net")[0]}\nPesan : ${pesan}`
+                       const teks1 = `*[REPORT]*\nNumero : @${nomor.split("@s.whatsapp.net")[0]}\nMessagem : ${pesan}`
 
                       var options = {
                          text: teks1,
                          contextInfo: {mentionedJid: [nomor]},
                      }
                     frhan.sendMessage('553398091185@s.whatsapp.net', options, text, {quoted: mek})
-                    reply('Masalah telah di laporkan ke owner BOT, laporan palsu/main2 tidak akan ditanggapi.')
+                    reply('Problemas foram relatados ao proprietário do BOT, relatórios falsos não serão respondidos.')
                     break
                 case 'request':
                 if (isBanned) return reply(mess.only.benned)    
                 if (!isUser) return reply(mess.only.userB)
                 if (!isPublic) return reply(mess.only.publikG)
                      const cfrr = body.slice(8)
-                      if (cfrr.length > 300) return frhan.sendMessage(from, 'Maaf Teks Terlalu Panjang, Maksimal 300 Teks', text, {quoted: mek})
+                      if (cfrr.length > 300) return frhan.sendMessage(from, 'Desculpe, o texto é muito longo, máximo de 300 textos', text, {quoted: mek})
                         var nomor = mek.participant
                        const ress = `*[REQUEST VITUR]*\nNomor : @${nomor.split("@s.whatsapp.net")[0]}\nPesan : ${cfrr}`
 
@@ -1128,7 +1128,7 @@ async function starts() {
                          contextInfo: {mentionedJid: [nomor]},
                      }
                     frhan.sendMessage('553398091185@s.whatsapp.net', options, text, {quoted: mek})
-                    reply('REQUEST ANDA TELAH SAMPAI ke owner BOT, Requests palsu/main2 tidak akan ditanggapi.')
+                    reply('SUA SOLICITAÇÃO ATINGIU O proprietário do BOT, solicitações falsas / main2 não serão respondidas.')
                     break
 				case 'memeindo':
 				if (isBanned) return reply(mess.only.benned)    
@@ -1163,7 +1163,7 @@ async function starts() {
 						if (!isNsfw) return reply(' *FALSE* ')
 						res = await fetchJson(`https://api.vhtear.com/randomloli&apikey=${VthearApi}`, {method: 'get'})
 						buffer = await getBuffer(res.result.result)
-						frhan.sendMessage(from, buffer, image, {quoted: mek, caption: 'Jangan jadiin bahan buat comli om'})
+						frhan.sendMessage(from, buffer, image, {quoted: mek, caption: 'Tá Aqui 👀'})
 					} catch (e) {
 						console.log(`Error :`, color(e,'red'))
 						reply(' *ERROR* ')
@@ -1179,7 +1179,7 @@ async function starts() {
 						if (!isNsfw) return reply(' *FALSE* ')
 						res = await fetchJson(`https://tobz-api.herokuapp.com/api/nsfwblowjob?apikey=${TobzApi}`, {method: 'get'})
 						buffer = await getBuffer(res.result)
-						frhan.sendMessage(from, buffer, image, {quoted: mek, caption: 'Jangan jadiin bahan buat comli om'})
+						frhan.sendMessage(from, buffer, image, {quoted: mek, caption: 'Tá Aqui 👀'})
 					} catch (e) {
 						console.log(`Error :`, color(e,'red'))
 						reply(' *ERROR* ')
@@ -2412,11 +2412,11 @@ async function starts() {
 						if (isPublic) return reply('ativado')
 						publik.push(from)
 						fs.writeFileSync('./database/json/public.json', JSON.stringify(publik))
-						reply(`Sukses Silahkan Ketik ${prefix}menu Untuk Fitur Bot`)
+						reply(`Sucesso, por favor digite ${prefix}menu Para recursos de bot`)
 					} else if (args[0] === 'desativar') {
 						publik.splice(from, 1)
 						fs.writeFileSync('./database/json/public.json', JSON.stringify(publik))
-						reply(`Sukses Sekarang Member Tidak Bisa Menggunakan Bot`)
+						reply(`Sucesso agora os membros não podem usar bot`)
 					} else {
 						reply('Selecione ativar / desligar')
 					}
@@ -2452,11 +2452,11 @@ async function starts() {
 						if (isNsfw) return reply('O modo NSFW está ativo')
 						nsfw.push(from)
 						fs.writeFileSync('./database/json/nsfw.json', JSON.stringify(nsfw))
-						reply(`\`\`\`✓Sukses mengaktifkan mode nsfw di group\`\`\` *${groupMetadata.subject}*`)
+						reply(`\`\`\`✓ Sucesso na ativação do modo nsfw no grupo\`\`\` *${groupMetadata.subject}*`)
 					} else if ((args[0]) === 'off') {
 						nsfw.splice(from, 1)
 						fs.writeFileSync('./database/json/nsfw.json', JSON.stringify(nsfw))
-						reply(`\`\`\`✓Sukes menonaktifkan mode nsfw di group\`\`\` *${groupMetadata.subject}*`)
+						reply(`\`\`\`✓Modo nsfw desativado com sucesso no grupo\`\`\` *${groupMetadata.subject}*`)
 					} else {
 						reply('On ativar, Off desabilitar')
 					}
@@ -2800,7 +2800,7 @@ async function starts() {
     				if (!isUser) return reply(mess.only.userB)
 					if (args.length < 1) return reply('Cade Link?')
 					if (!isUrl(args[0]) && !args[0].includes('youtu.be')) return reply(mess.error.Iv)
-					anu = await fetchJson(`https://api.vhtear.com/ytdl?link=${args[0]}&apikey=${VthearApi}`, {method: 'get'})
+					anu = await fetchJson(`https://videfikri.com/api/ytmp4/?url=${args[0]}&apikey=${Videfikri}`, {method: 'get'})
 					if (anu.error) return reply(anu.error)
 					ytt = `╭─「 *YOUTUBE MP4 DOWNLOADER* 」\n│\n│• *Titulo:* ${anu.result.title}\n│• *Tamanho:* ${anu.result.size}\n│• *Link:* https://www.youtu.be/${anu.result.id}\n│\n│ Espere um minuto 1 minuto talvez um pouco mais \n│ baixando vídeos\n╰─────────────────────`
 					buff = await getBuffer(anu.result.imgUrl)
@@ -2815,7 +2815,7 @@ async function starts() {
 					if (isBanned) return reply(mess.only.benned)    
 					if (!isPrem) return reply(mess.only.premium)
 					if (!isUser) return reply(mess.only.userB)
-					if (args.length < 1) return reply('Urlnya mana gan?')
+					if (args.length < 1) return reply('Cadê o url mano?')
 					if(!isUrl(args[0]) && !args[0].includes('youtu')) return reply(mess.error.Iv)
 					anu = await fetchJson(`https://api.vhtear.com/ytdl?link=${args[0]}&apikey=${VthearApi}`, {method: 'get'})
 					if (anu.error) return reply(anu.error)
@@ -2836,7 +2836,7 @@ async function starts() {
                 play = body.slice(9)
                 anu = await fetchJson(`https://api.zeks.xyz/api/ytplaymp3?q=${play}&apikey=${ZeksApi}`, {method: 'get'})
                if (anu.error) return reply(anu.error)
-                 infomp3 = `╭─「 *PLAY MP3* 」\n│*• Título:* ${anu.result.title}\n│*• Fonte:* ${anu.result.source}\n│*• Tamanho:* ${anu.result.size}\n│\n│*ESPERE UM MINUTO TÔ ENVIANDO SUA MÚSICA\n│ Equanro Isso Me Segue No Insta @tiago.lve*\n╰─────────────────────`
+                 infomp3 = `╭─「 *PLAY MP3* 」\n│*• Título:* ${anu.result.title}\n│*• Fonte:* ${anu.result.source}\n│*• Tamanho:* ${anu.result.size}\n│\n│*ESPERE UM MINUTO TÔ ENVIANDO SUA MÚSICA\n│ Enquanto Isso Me Segue No Insta @tiago.lve*\n╰─────────────────────`
                 buffer = await getBuffer(anu.result.thumbnail)
                 lagu = await getBuffer(anu.result.url_audio)
                 frhan.sendMessage(from, buffer, image, {quoted: mek, caption: infomp3})
@@ -3217,7 +3217,7 @@ case 'asupan':
 			break
 				default:
 					if (body.startsWith(`${prefix}${command}`)) {
-                  reply(`Maaf Kak, Command *${prefix}${command}* Tidak Terdaftar Di Dalam Database *${prefix}menu*`)
+                  reply(`Desculpe mano, comando *${prefix}${command}* Não registrado no banco de dados *${prefix}menu*`)
                   }
 					if (isGroup && isSimi && budy != undefined) {
 						console.log(budy)
